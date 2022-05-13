@@ -45,20 +45,13 @@ function solution(id_list, report, k) {
     }
 
     // report 당한 횟수 검증
-    for (const key1 in reportTimes) {
-        if (reportTimes[key1] >= k) {
-            for (const key2 in reported) {
-                // 해당 객체가 값을 들고있는지 검증
-                if (reported[key2].has(key1)) {
-                    const keyIndex = Object.keys(reported).indexOf(key2);
-                    if (keyIndex !== -1) {
-                        answer[keyIndex] += 1;
-                    }
-                }
+    for (const key1 in reported) {
+        reported[key1].forEach((data) => {
+            if (reportTimes[data] >= k) {
+                answer[id_list.indexOf(key1)] += 1;
             }
-        }
+        });
     }
     return answer;
 }
-
-solution(id_list2, report2, 3);
+console.log(solution(id_list, report, k));
