@@ -5,5 +5,8 @@
   "repository": "https://github.com/LeeByeongWoon/algorithm.git",
   "author": "LeeByeongWoon <tfh100@gmail.com>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
 }
