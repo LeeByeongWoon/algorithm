@@ -1,17 +1,18 @@
-function delay() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => resolve(), 1000);
-  });
-}
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("hello"), 2000);
+});
 
-async function getApple() {
-  await delay();
-  return "apple";
-}
+const arr = [
+  promise,
+  promise,
+  promise,
+  promise,
+  promise,
+  promise,
+  promise,
+  promise,
+];
 
-async function getBanana() {
-  await delay();
-  return "banana";
-}
-
-const promises = [];
+arr.forEach((prm, index) => {
+  promise.then((res) => console.log(`${index}: ${res}`));
+});

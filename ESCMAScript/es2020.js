@@ -7,7 +7,11 @@ console.log(matchAllResult.next());
 console.log(1n + 1n); // big int
 console.log(typeof 1n);
 
+console.log("promise");
 Promise.allSettled([
+  new Promise((resolve, reject) => {
+    setTimeout(() => resolve("hello"), 2000);
+  }),
   Promise.resolve("ok"),
   Promise.reject("not ready"),
   Promise.resolve("ok"),
