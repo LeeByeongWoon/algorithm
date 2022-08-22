@@ -1,14 +1,14 @@
 console.log(Object.entries({ a: "hello", b: "bye" }));
 console.log(
   Object.fromEntries([
-    [a, "hello"],
-    [b, "bye"],
+    ["a", "hello"],
+    ["b", "bye"],
   ])
 );
-// entey만들어서 풀어버리면 편할듯????
+// entry 만들어서 풀어버리면 편할듯????
 console.log(["abc", "def", ["gh", ["ijk"]]].flat());
-console.log([("abc", "def", ["gh", ["ijk"]])].flat(2));
-console.log([("abc", "def", ["gh", ["ijk"]])].flat(Infinity));
+console.log(["abc", "def", ["gh", ["ijk"]]].flat(2));
+console.log(["abc", "def", ["gh", ["ijk"]]].flat(Infinity));
 
 ["abc", "def"].map((v) => v.split("")); // [['a', 'b', 'c'], ['d', 'e', 'f']]
 ["abc", "def"].map((v) => v.split("")).flat(); // ['a', 'b', 'c', 'd', 'e', 'f']
